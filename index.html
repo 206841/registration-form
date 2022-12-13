@@ -16,20 +16,18 @@
       var male=document.getElementById("male");
       console.log("male:",male.checked,"female:",female.checked)
       
-      var firstNameCheck=/^[a-zA-Z ]+$/;
-      var lastNameCheck=/^[a-zA-Z ]+$/;
+      var firstNameCheck=/^[a-zA-Z ]/+$;
+      var lastNameCheck=/^[a-zA-Z ]/+$;
       var emailCheck=/^[a-zA-Z0-9.#]+@[a-z]+\.[a-z]{2,3}$/;
-      var passwordCheck=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#$&*_])$/;
-      var mobileCheck=/^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
-      var mobileCheck=/^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
-      var mobileCheck=/^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
-
+      var passwordCheck=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#$&*--+_]).{6}$/;
+      var mobileCheck=/^[4-8]\d{5}$/;
+     
       if(firstname==""||firstname.length<3){
         alert("Please enter your name")
         return false
       }
       if(!firstname.match(firstNameCheck)){
-        alert("Please check your name it should carry only characters and no special characters,no digits  are allowed")
+        alert("Please check your name")
         return false
       }
       if(lastname==""||lastname.length<3){
@@ -37,11 +35,11 @@
         return false
       }
       if(!lastname.match(lastNameCheck)){
-        alert("Please check your name it should carry only characters and no special characters,no digits are allowed")
+        alert("Please check your name")
         return false
       }
       if(email==""){
-        alert("Email id is mandatory")
+        alert("Email id is Compulsory")
         return false
       }
       if(!email.match(emailCheck)){
